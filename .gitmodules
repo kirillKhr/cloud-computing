@@ -1,0 +1,6 @@
+[submodule "artstyle-client"]
+	path = artstyle-client
+	url = https://github.com/Goryounov/artstyle-client.git
+[submodule "artstyle-server"]
+	path = artstyle-server
+	url = https://github.com/Goryounov/artstyle-server.git
