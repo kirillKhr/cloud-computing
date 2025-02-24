@@ -12,12 +12,20 @@
       - artstyle_nodes.ini
   
   - name: extract gz files
-    shell: "gzip -d artstyle-server.tar.gz artstyle-client.tar.gz"
+    shell: "gzip -fd artstyle-server.tar.gz artstyle-client.tar.gz"
     args:
       chdir: "~/artstyle/"
       warn: false
+
   - name: load client image
     shell: docker load -i artstyle-client.tar
+    args:
+      chdir: "~/artstyle/"
 
   - name: load server image
     shell: docker load -i artstyle-server.tar
+    args:
+      chdir: "~/artstyle/"
+  
+  - name: run application containers
+    shell: docker-compose -f docker-compose.yml up -d
