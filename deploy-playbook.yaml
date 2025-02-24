@@ -10,6 +10,7 @@
       - artstyle-server.tar.gz
       - .env
       - artstyle_nodes.ini
+      - docker-compose.yaml
   
   - name: extract gz files
     shell: "gzip -fd artstyle-server.tar.gz artstyle-client.tar.gz"
@@ -28,6 +29,6 @@
       chdir: "~/artstyle/"
   
   - name: run application containers
-    shell: docker compose -f docker-compose.yml up -d
+    shell: docker compose -f docker-compose.yaml up -d
     args:
       chdir: "~/artstyle/"
