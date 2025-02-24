@@ -4,7 +4,7 @@
   - name: Copy files to remote server
     copy:
       src: "{{ item }}"
-      dest: "~/"
+      dest: "~/artstyle/"
     loop:
       - artstyle-client.tar.gz
       - artstyle-server.tar.gz
