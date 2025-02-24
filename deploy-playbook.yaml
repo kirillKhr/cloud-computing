@@ -1,0 +1,12 @@
+- name: deploy ArtStyle web application
+  hosts: artstyle_nodes
+  tasks:
+  - name: Copy files to remote server
+    copy:
+      src: "{{ item }}"
+      dest: "~/"
+    loop:
+      - artstyle-client.tar.gz
+      - artstyle-server.tar.gz
+      - .env
+      - artstyle_nodes.ini
