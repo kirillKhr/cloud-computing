@@ -10,3 +10,14 @@
       - artstyle-server.tar.gz
       - .env
       - artstyle_nodes.ini
+  
+  - name: extract gz files
+    shell: "gzip -d artstyle-server.tar.gz artstyle-client.tar.gz"
+    args:
+      chdir: "~/artstyle/"
+      warn: false
+  - name: load client image
+    shell: docker load -i artstyle-client.tar
+
+  - name: load server image
+    shell: docker load -i artstyle-server.tar
