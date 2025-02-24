@@ -28,4 +28,4 @@
       chdir: "~/artstyle/"
   
   - name: run application containers
-    shell: docker-compose -f docker-compose.yml up -d
+    shell: docker compose -f docker-compose.yml up -d
